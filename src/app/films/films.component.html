@@ -1,0 +1,9 @@
+<p>films works!</p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4" *ngFor="let film of films">
+      <app-buy [film]="film" (buy)="done($event)"></app-buy>
+    </div>
+  </div>
+</div>
