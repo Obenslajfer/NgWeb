@@ -1,7 +1,39 @@
-h1{
-  font-size: 70px;
-}
 img {
-  height: 10%;
-  width: 10%;
+  width: 50%;
+  height: 50%;
+  transition-duration: 0.2s;
+  -webkit-box-shadow: 10px 10px 0px 0px #a6dcef;
+  -moz-box-shadow: 10px 10px 0px 0px #a6dcef;
+  box-shadow: 10px 10px 0px 0px #a6dcef;
+}
+img:hover {
+  opacity: 40%;
+  transition-duration: 0.2s;
+}
+p{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  display: inline;
+}
+.productRow {
+  background-color: #ddf3f5;
+  p{
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+.cartClick{
+  p{
+    font-size: 30px;
+    transition-duration: 0.2s;
+  }
+
+
+}
+.cartClick:hover {
+  transition-duration: 0.2s;
+  cursor: pointer;
+  color: grey;
 }

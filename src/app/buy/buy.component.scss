@@ -1,16 +1,38 @@
+.pink {
+  position: relative;
+  text-align: center;
+}
+.centered{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  z-index: -1;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #e36387;
+  transition-duration: 0.2s;
+
+}
+.center:hover{
+  transition-duration: 0.2s;
+  font-size: 40px;
+}
+
+img:hover {
+  opacity: 20%;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
 img {
   width: 50%;
   height: 50%;
-  transition-duration: 0.2ms;
-  -webkit-box-shadow: 10px 10px 0px 0px #ffa299;
-  -moz-box-shadow: 10px 10px 0px 0px #ffa299;
-  box-shadow: 10px 10px 0px 0px #ffa299;
-}
-img:hover {
-  opacity: 40%;
   transition-duration: 0.2s;
+  -webkit-box-shadow: 10px 10px 0px 0px #a6dcef;
+  -moz-box-shadow: 10px 10px 0px 0px #a6dcef;
+  box-shadow: 10px 10px 0px 0px #a6dcef;
 }
-
 
 p{
   font-family: 'Bentham', serif;

@@ -1,9 +1,48 @@
-ORDER WORKS!!
-
-<div *ngFor="let cart of carts; index as i">
-  <img class="red" src="{{cart.filmPoster}}" alt="">
-  <h1>Title: </h1>{{cart.filmTitle}}
-  <h1>Quantity: </h1>{{cart.filmQuantity}}
+<div class="container">
+  <div class="row text-center">
+    <div class="col-3">
+      <p> Title </p>
+    </div>
+    <div class="col-3">
+      <p> Price </p>
+    </div>
+    <div class="col-3">
+      <p> Quantity </p>
+    </div>
+    <div class="col-3">
+      <p> Remove </p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row text-center productRow" *ngFor="let a of films">
+    <div class="col-3">
+      <p>{{a.filmTitle}} </p>
+    </div>
+    <div class="col-3">
+      <p>{{a.filmPrice}} </p>
+    </div>
+    <div class="col-3">
+      <p (click)=increaseQ(a)>+</p>
+      <p>{{a.filmQuantity}} </p>
+      <p (click)=decreaseQ(a)>-</p>
+    </div>
+    <div (click)="removeOrder(a)" class="col-3">
+      <p> X </p>
+    </div>
+    <hr>
+  </div>
 </div>
 
-
+<div class="container">
+  <div class="row text-center">
+    <div class="col-4 cartClick">
+      <p>TotalPrice: {{ totalPrice }}</p>
+    </div>
+    <div [routerLink]="['/checkout']" routerLinkActive="router-link-active" class="col-4 cartClick">
+      <p>CHECKOUT</p>
+    </div>
+    <div class="col-4 cartClick" (click)="clearCart()">
+      <p> EMPTY CART</p>
+    </div>
+  </div>

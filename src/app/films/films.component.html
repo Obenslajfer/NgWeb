@@ -1,8 +1,6 @@
-<p>films works!</p>
-
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-4" *ngFor="let film of films">
+  <div class="row text-center justify-content-center">
+    <div class="col-md-4 col-sm-6 mt-4" *ngFor="let film of films">
       <app-buy [film]="film" (buy)="done($event)"></app-buy>
     </div>
   </div>

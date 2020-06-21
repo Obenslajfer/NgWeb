@@ -3,5 +3,6 @@ export default class Cart {
   filmPoster: string;
   filmYear: string;
   filmId: number;
+  filmPrice: number;
   filmQuantity: number = 1;
 }

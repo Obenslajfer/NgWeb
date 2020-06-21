@@ -1,0 +1,22 @@
+.logo{
+  font-weight: 700;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 50px;
+}
+
+.navText {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  text-decoration: none;
+  color: #a6dcef;
+  transition-duration: 0.2s;
+}
+.navText:link {
+  text-decoration: none;
+}
+.navText:hover {
+  color: #ddf3f5;
+
+
+}

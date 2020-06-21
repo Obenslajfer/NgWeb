@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BuyComponent } from './buy.component';
+import Film from '../models/Film';
+import { FilmsComponent } from '../films/films.component';
 
 describe('BuyComponent', () => {
   let component: BuyComponent;
@@ -8,7 +10,7 @@ describe('BuyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BuyComponent ]
+      declarations: [ BuyComponent, FilmsComponent ]
     })
     .compileComponents();
   }));
@@ -17,9 +19,19 @@ describe('BuyComponent', () => {
     fixture = TestBed.createComponent(BuyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should send data ', () => {
+
+    const spy = spyOn(component.buy, 'emit');
+    component.bought();
+    expect(spy).toHaveBeenCalled();
+  });
+
 });

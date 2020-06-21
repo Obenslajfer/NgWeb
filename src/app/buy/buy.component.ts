@@ -14,6 +14,7 @@ export class BuyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   bought() {

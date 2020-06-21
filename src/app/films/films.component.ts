@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmsService } from '../service/films.service';
 import Film from '../models/Film';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-films',
@@ -9,31 +10,30 @@ import Film from '../models/Film';
 })
 export class FilmsComponent implements OnInit {
   films: Film[] = [];
-  cart = [];
+  carts: Film[] = JSON.parse(localStorage.getItem('cart')) || [];
 
-  constructor(private service: FilmsService) { }
+  constructor(private service: FilmsService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.service.films.subscribe((filmData: Film[]) => {
-
-      console.log(filmData);
-      this.films = filmData;
-
+    this.films = filmData;
     });
     this.service.getFilms();
+
   }
 
   done(clickedMovie: Film){
-
-    if (this.cart.includes(clickedMovie) === true){
+    if (this.carts.includes(clickedMovie) === true){
       ++clickedMovie.filmQuantity;
-      console.log(this.cart);
+
     }
     else {
-      this.cart.push((clickedMovie));
-      console.log(this.cart);
+      this.carts.push((clickedMovie));
     }
-    localStorage.cart = JSON.stringify(this.cart);
+    localStorage.setItem('cart', JSON.stringify(this.carts));
+    console.log(this.carts);
+
+
   }
 
 }

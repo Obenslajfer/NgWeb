@@ -1,5 +1,4 @@
-<div (click)="bought()">
-  <p> {{ film.filmTitle }} </p>
+<div  (click)="bought()" *ngIf="bought()">
   <img src="{{ film.filmPoster }}" alt="">
-  <p>{{ film.filmYear }} </p>
+  <p class="centered"> Aquire </p>
 </div>
