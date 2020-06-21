@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder , Validators} from '@angular/forms';
-import Cart from '../models/Cart';
 import { SetOrderService } from '../service/set-order.service';
-import Form from '../models/Form';
 import Film from '../models/Film';
 
 @Component({
@@ -31,17 +29,21 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.getTheTotalPrice();
+
+  }
+
+  getTheTotalPrice(){
     let totalPrice = 0;
     this.checkoutFilms.forEach(price =>{
       this.total += price.filmPrice * price.filmQuantity;
     });
     totalPrice = this.total;
     console.log(this.total);
-
   }
 
-  sendOrder() {
 
+  sendOrder() {
     const order = this.finalOrder.value;
     order.totalPrice = this.total;
     order.films = [];
@@ -54,11 +56,10 @@ export class CheckoutComponent implements OnInit {
     films.forEach(film => {
       order.films.push(film);
     });
-    console.log(films);
-    console.log(order);
-
     this.service.addOrder(order);
 
   }
+
+
 
 }

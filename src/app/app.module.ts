@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FilmsComponent } from './films/films.component';
@@ -25,16 +25,13 @@ import { AdminComponent } from './admin/admin.component';
     OrderComponent,
     NavbarComponent,
     CheckoutComponent,
-    AdminComponent
+    AdminComponent,
   ],
   imports: [
-    AppModule,
     HttpClientModule,
-    HttpClient,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-
   ],
   exports: [
     NavbarComponent

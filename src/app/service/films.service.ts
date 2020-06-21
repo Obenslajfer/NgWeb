@@ -8,12 +8,9 @@ import IFilmsService from './IFilmsService';
   providedIn: 'root'
 })
 export class FilmsService implements IFilmsService {
-
   films = new Subject<Film[]>();
 
   constructor(private http: HttpClient) { }
-
-
   getFilms(){
     this.http.get('https://medieinstitutet-wie-products.azurewebsites.net/api/products')
     .subscribe((data: any) => {
@@ -31,8 +28,5 @@ export class FilmsService implements IFilmsService {
 
       this.films.next(filmsFromApi);
     });
-
-
-
   }
 }

@@ -8,6 +8,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { AdminComponent } from './admin/admin.component';
 
 
+
 const routes: Routes = [
   {path: '', component: FilmsComponent},
   {path: 'contact', component: ContactComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'checkout', component: CheckoutComponent},
   {path: 'admin', component: AdminComponent},
   {path: '**', component: ErrorComponent}
+
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import Film from '../models/Film';
+import { CheckoutComponent } from '../checkout/checkout.component';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',

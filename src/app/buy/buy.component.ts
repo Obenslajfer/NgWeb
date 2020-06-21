@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import Film from '../models/Film';
+import { FilmsComponent } from '../films/films.component';
 
 @Component({
   selector: 'app-buy',
@@ -7,14 +8,15 @@ import Film from '../models/Film';
   styleUrls: ['./buy.component.scss']
 })
 export class BuyComponent implements OnInit {
+  carts: Film[] = JSON.parse(localStorage.getItem('cart')) || [];
+
   @Input() film: Film;
   @Output() buy = new EventEmitter<Film>();
 
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-
   }
 
   bought() {

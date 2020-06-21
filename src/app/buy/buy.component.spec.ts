@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BuyComponent } from './buy.component';
-import Film from '../models/Film';
 import { FilmsComponent } from '../films/films.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('BuyComponent', () => {
   let component: BuyComponent;
@@ -10,7 +10,8 @@ describe('BuyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BuyComponent, FilmsComponent ]
+      declarations: [ BuyComponent, FilmsComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   }));
@@ -28,7 +29,7 @@ describe('BuyComponent', () => {
 
 
   it('should send data ', () => {
-
+    component.ngOnInit();
     const spy = spyOn(component.buy, 'emit');
     component.bought();
     expect(spy).toHaveBeenCalled();

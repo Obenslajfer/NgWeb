@@ -41,5 +41,6 @@ describe('FilmsComponent', () => {
     const moviesAtTheEnd = component.carts.length;
 
     expect(moviesAtTheEnd).toBe(moviesFromStart + 1);
-  })
+  });
+
 });

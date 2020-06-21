@@ -16,18 +16,18 @@
 </div>
 <div class="container">
   <div class="row text-center productRow" *ngFor="let a of films">
-    <div class="col-3">
+    <div class="col-12 col-md-3">
       <p>{{a.filmTitle}} </p>
     </div>
-    <div class="col-3">
+    <div class="col-12 col-md-3">
       <p>{{a.filmPrice}} </p>
     </div>
-    <div class="col-3">
+    <div class="col-12 col-md-3">
       <p (click)=increaseQ(a)>+</p>
       <p>{{a.filmQuantity}} </p>
       <p (click)=decreaseQ(a)>-</p>
     </div>
-    <div (click)="removeOrder(a)" class="col-3">
+    <div (click)="removeOrder(a)" class="col-12 col-md-3">
       <p> X </p>
     </div>
     <hr>
@@ -36,13 +36,13 @@
 
 <div class="container">
   <div class="row text-center">
-    <div class="col-4 cartClick">
+    <div class="col-12 col-md-4 cartClick">
       <p>TotalPrice: {{ totalPrice }}</p>
     </div>
-    <div [routerLink]="['/checkout']" routerLinkActive="router-link-active" class="col-4 cartClick">
+    <div [routerLink]="['/checkout']" routerLinkActive="router-link-active" class="col-12 col-md-4 cartClick">
       <p>CHECKOUT</p>
     </div>
-    <div class="col-4 cartClick" (click)="clearCart()">
+    <div class="col-12 col-md-4 cartClick" (click)="clearCart()">
       <p> EMPTY CART</p>
     </div>
   </div>

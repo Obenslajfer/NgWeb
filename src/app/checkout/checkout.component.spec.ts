@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CheckoutComponent } from './checkout.component';
-import {FormBuilder, FormControl, FormGroup, Validators, FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { DatePipe } from '@angular/common';
+
 
 describe('CheckoutComponent', () => {
   let component: CheckoutComponent;
@@ -8,8 +11,9 @@ describe('CheckoutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormBuilder],
-      declarations: [ CheckoutComponent ]
+      imports: [ReactiveFormsModule, HttpClientTestingModule],
+      declarations: [ CheckoutComponent ],
+      providers: [DatePipe]
     })
     .compileComponents();
   }));
